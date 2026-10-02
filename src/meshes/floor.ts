@@ -8,6 +8,7 @@ const floor = new THREE.Mesh(geometry, floorMaterial);
 floor.rotation.x = Math.PI / 2;
 floor.position.y = -2;
 
+floor.castShadow = false;
 floor.receiveShadow = true;
 
 export default floor;

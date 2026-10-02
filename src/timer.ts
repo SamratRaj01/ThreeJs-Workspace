@@ -1,4 +1,4 @@
-import { Timer } from "three/examples/jsm/misc/Timer.js";
+import * as THREE from "three";
 import { resizeRendererToDisplaySize } from "./utils/resize";
 import cube from "./meshes/cube";
 import sphere from "./meshes/sphere";
@@ -9,14 +9,15 @@ import scene from "./scene";
 import controls from "./controls";
 import stats from "./utils/stats";
 
-const timer = new Timer();
+const timer = new THREE.Timer();
+timer.connect(document);
 
 export default timer;
 
 export const tick = () => {
   stats.begin();
-  const elapsedTime = timer.getElapsed();
   timer.update();
+  const elapsedTime = timer.getElapsed();
   cube.rotation.y = elapsedTime * 0.5;
   sphere.rotation.y = elapsedTime * 0.5;
   torus.rotation.y = elapsedTime * 0.5;
