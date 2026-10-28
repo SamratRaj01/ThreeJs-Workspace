@@ -14,7 +14,8 @@ import {
 } from "./helpers/lightHelpers";
 import { directionalLightShadowCameraHelper } from "./helpers/shadowCameraHelpers";
 
-function main() {
+function main() 
+{
   // Meshes
   scene.add(cube);
   scene.add(sphere);

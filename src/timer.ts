@@ -2,6 +2,7 @@ import * as THREE from "three";
 import { resizeRendererToDisplaySize } from "./utils/resize";
 import cube from "./meshes/cube";
 import sphere from "./meshes/sphere";
+import { updateLiquid } from "./meshes/liquid";
 import torus from "./meshes/torus";
 import renderer from "./renderer";
 import camera from "./camera";
@@ -21,6 +22,8 @@ export const tick = () => {
   cube.rotation.y = elapsedTime * 0.5;
   sphere.rotation.y = elapsedTime * 0.5;
   torus.rotation.y = elapsedTime * 0.5;
+  updateLiquid(elapsedTime);
+
 
   if (resizeRendererToDisplaySize(renderer)) {
     const canvas = renderer.domElement;

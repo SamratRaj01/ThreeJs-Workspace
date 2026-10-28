@@ -26,4 +26,17 @@ const earthMaterial = new THREE.MeshStandardMaterial({
   map: earthTexture,
 });
 
-export { cubeMaterial, floorMaterial, normalMaterial, earthMaterial };
+const liquidMaterial = new THREE.MeshPhysicalMaterial({
+  color: "#4fc3f7",
+  transmission: 1, // fully see-through, refracts the scene behind it
+  thickness: 0.8, // how "deep" the refraction looks
+  roughness: 0.05,
+  ior: 1.33, // index of refraction of water
+  clearcoat: 1,
+  clearcoatRoughness: 0,
+  attenuationColor: new THREE.Color("#0077be"), // tint gets deeper through thicker parts
+  attenuationDistance: 1,
+});
+
+export { cubeMaterial, floorMaterial, normalMaterial, earthMaterial, liquidMaterial };
+
